@@ -37,7 +37,7 @@ TIMERS_DRIVER = SUB_TIMERS_DRIVER
 CANOPENSHELL = CANOpenShell
 ENABLE_SHARED = SUB_ENABLE_SHARED
 
-INCLUDES = -I../../include -I../../include/$(TARGET) -I../../include/$(CAN_DRIVER) -I../../include/$(TIMERS_DRIVER)
+INCLUDES = -I/usr/include/arm-linux-gnueabihf -I../../include -I../../include/$(TARGET) -I../../include/$(CAN_DRIVER) -I../../include/$(TIMERS_DRIVER)
 
 MASTER_OBJS = CANOpenShellMasterOD.o CANOpenShellSlaveOD.o CANOpenShell.o
 
