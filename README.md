@@ -2,4 +2,6 @@ This is a fork of https://github.com/fbsder/canfestival.git which is a fork of o
 
 Latest work done:
 
-none
+addded CANOPEN_System.send_fatal structure in data to allow failed network interface to optionaly signal the main app that things have really gone badely at the hardware
+level.
+
