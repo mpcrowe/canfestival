@@ -340,6 +340,16 @@ struct struct_CO_Data {
 	lss_Initializer\
 }
 
+typedef void (*send_fatal_t)(char* errString, int line, int retval);
+
+struct struct_System {
+
+	send_fatal_t send_fatal;
+
+};
+
+extern struct struct_System CANOPEN_System;
+
 #ifdef __cplusplus
 };
 #endif

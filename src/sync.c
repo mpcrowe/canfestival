@@ -61,7 +61,16 @@ UNS32 OnCOB_ID_SyncUpdate(CO_Data* d, const indextable * unsused_indextable,
 **/   
 void SyncAlarm(CO_Data* d, UNS32 id)
 {
-	sendSYNC(d) ;
+  UNS8 res;
+  res = sendSYNC(d);
+  if(res)
+  {
+    if(CANOPEN_System.send_fatal != NULL)
+    {
+      CANOPEN_System.send_fatal((char*)__FUNCTION__, __LINE__, res);
+    }
+  }
+  
 }
 
 /*!                                                                                                
@@ -150,7 +159,7 @@ UNS8 sendSYNC(CO_Data* d)
   UNS8 res;
   res = sendSYNCMessage(d);
   proceedSYNC(d) ; 
-  return res ;
+  return(res) ;
 }
 
 /*!                                                                                                
